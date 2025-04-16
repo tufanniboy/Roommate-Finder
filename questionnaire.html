@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferences - RoommateFinder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="dashboard.html">RoommateFinder</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="backend/logout.php">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <div class="container">
+                <h2>Your Preferences</h2>
+                <p>Help us find your perfect roommate by answering a few questions</p>
+                
+                <form id="questionnaireForm" action="backend/save_preferences.php" method="POST" onsubmit="return validateQuestionnaireForm()">
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <select id="location" name="location" required>
+                            <option value="">Select a city</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Kolkata">Kolkata</option>
+                            <option value="Pune">Pune</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Lucknow">Lucknow</option>
+                            <option value="Kanpur">Kanpur</option>
+                            <option value="Nagpur">Nagpur</option>
+                            <option value="Indore">Indore</option>
+                            <option value="Thane">Thane</option>
+                            <option value="Bhopal">Bhopal</option>
+                            <option value="Visakhapatnam">Visakhapatnam</option>
+                            <option value="Patna">Patna</option>
+                            <option value="Vadodara">Vadodara</option>
+                            <option value="Ghaziabad">Ghaziabad</option>
+                            <option value="Ludhiana">Ludhiana</option>
+                        </select>
+                        <span class="error" id="locationError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Budget Range</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="budget1" name="budget" value="5k-7k" required>
+                                <label for="budget1">₹5,000 - ₹7,000</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="budget2" name="budget" value="7k-10k">
+                                <label for="budget2">₹7,000 - ₹10,000</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="budget3" name="budget" value="10k-12k">
+                                <label for="budget3">₹10,000 - ₹12,000</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="budget4" name="budget" value="12k-15k">
+                                <label for="budget4">₹12,000 - ₹15,000</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="budget5" name="budget" value="above-15k">
+                                <label for="budget5">Above ₹15,000</label>
+                            </div>
+                        </div>
+                        <span class="error" id="budgetError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Number of Roommates</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="roommates1" name="roommates" value="1" required>
+                                <label for="roommates1">1 Roommate</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="roommates2" name="roommates" value="2">
+                                <label for="roommates2">2 Roommates</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="roommates3" name="roommates" value="3">
+                                <label for="roommates3">3 Roommates</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="roommates4" name="roommates" value="4+">
+                                <label for="roommates4">4 or More Roommates</label>
+                            </div>
+                        </div>
+                        <span class="error" id="roommatesError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Lifestyle Preferences</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="lifestyle1" name="lifestyle" value="non-smoker-non-drinker" required>
+                                <label for="lifestyle1">Non-smoker / Non-drinker</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="lifestyle2" name="lifestyle" value="smoker-drinker">
+                                <label for="lifestyle2">Smoker / Drinker</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="lifestyle3" name="lifestyle" value="no-preference">
+                                <label for="lifestyle3">No Preference</label>
+                            </div>
+                        </div>
+                        <span class="error" id="lifestyleError"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">Find Matches</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> RoommateFinder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/validation.js"></script>
+</body>
+</html>

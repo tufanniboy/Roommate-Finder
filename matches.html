@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Matches - RoommateFinder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="dashboard.html">RoommateFinder</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="backend/logout.php">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="matches-container">
+            <div class="container">
+                <h2>Your Matches</h2>
+                <p id="matches-count">Loading your matches...</p>
+                
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="all">All Matches</button>
+                    <button class="tab-btn" data-tab="favorites">Favorites</button>
+                </div>
+                
+                <div id="all-matches" class="tab-content active">
+                    <!-- Matches will be loaded here via JavaScript -->
+                    <div class="loading">Loading matches...</div>
+                </div>
+                
+                <div id="favorites" class="tab-content">
+                    <!-- Favorites will be loaded here via JavaScript -->
+                    <div class="no-favorites">
+                        <p>You haven't added any favorites yet.</p>
+                        <p>Browse your matches and click "Add to Favorites" to save them here.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> RoommateFinder. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/matches.js"></script>
+</body>
+</html>
